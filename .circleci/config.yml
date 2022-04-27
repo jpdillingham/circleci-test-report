@@ -1,0 +1,18 @@
+version: '2.1'
+
+orbs:
+  node: circleci/node@5.0.2
+
+jobs:
+  build:
+    docker:
+      - image: cimg/node:lts
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm test
+      - store_test_results:
+          path: /home/circleci/project/junit.xml
+      - run: 
+          command: npm run report:tests
+          when: always

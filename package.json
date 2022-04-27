@@ -1,0 +1,19 @@
+{
+  "name": "circleci-test-report",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:jpdillingham/circleci-test-report.git",
+  "author": "JP Dillingham <jp.dillingham@lattice.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "JEST_JUNIT_ADD_FILE_ATTRIBUTE=true jest --reporters=default --reporters=jest-junit",
+    "report:tests": "node ./bin/report-tests.js"
+  },
+  "devDependencies": {
+    "jest": "^28.0.2",
+    "jest-junit": "^13.2.0"
+  },
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
